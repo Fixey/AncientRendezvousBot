@@ -17,8 +17,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class User
-{
+public class User {
     int id;
     String fullName;
     @JsonFormat(pattern = "yyyy-MM-dd")
@@ -29,15 +28,12 @@ public class User
     String gender;
     String description;
 
-    public String toJson()
-    {
-        try
-        {
+    public String toJson() {
+        try {
             ObjectMapper mapper = new ObjectMapper();
             return mapper.writeValueAsString(this);
 
-        } catch (JsonProcessingException e)
-        {
+        } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
     }
